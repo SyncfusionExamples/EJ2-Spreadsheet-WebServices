@@ -16,6 +16,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Your Syncfusion license key");
+
 app.UseCors("AllowAllOrigins");
 
 // Configure the HTTP request pipeline.

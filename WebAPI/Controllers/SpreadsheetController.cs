@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Syncfusion.EJ2.Spreadsheet;
-using Syncfusion.XlsIO;
 
 namespace WebAPI.Controllers
 {
@@ -17,16 +10,29 @@ namespace WebAPI.Controllers
     {
         [HttpPost]
         [Route("Open")]
-        public IActionResult Open([FromForm]IFormCollection openRequest)
+        public IActionResult Open([FromForm] IFormCollection openRequest)
         {
             OpenRequest open = new OpenRequest();
-            open.File = openRequest.Files[0];
+            if (openRequest.Files.Count != 0)
+            {
+                open.File = openRequest.Files[0];
+                if (openRequest.ContainsKey("IsManualCalculationEnabled") && bool.TryParse(openRequest["IsManualCalculationEnabled"].ToString(), out bool flag))
+                {
+                    open.IsManualCalculationEnabled = flag;
+                }
+            }
+            open.Password = openRequest["Password"];
+            if (openRequest["SheetIndex"].Count != 0)
+            {
+                open.SheetIndex = int.Parse(openRequest["SheetIndex"].ToString());
+            }
+            open.SheetPassword = openRequest["SheetPassword"];
             return Content(Workbook.Open(open));
         }
 
         [HttpPost]
         [Route("Save")]
-        public IActionResult Save([FromForm]SaveSettings saveSettings)
+        public IActionResult Save([FromForm] SaveSettings saveSettings)
         {
             return Workbook.Save(saveSettings);
         }
