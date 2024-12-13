@@ -30,5 +30,12 @@ namespace WebAPI.Controllers
         {
             return Workbook.Save(saveSettings);
         }
+
+        [HttpGet]
+        [Route("ping")]
+        public IActionResult Ping()
+        {
+            return Ok();
+        }
     }
 }
