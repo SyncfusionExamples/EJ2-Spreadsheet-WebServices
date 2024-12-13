@@ -1,37 +1,40 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace WebAPI
+// Add services to the container.
+
+builder.Services.AddControllers();
+
+var MyAllowSpecificOrigins = "AllowAllOrigins";
+builder.Services.AddCors(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+    options.AddPolicy(MyAllowSpecificOrigins, builder => {
+        builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                    webBuilder.ConfigureKestrel(serverOptions =>
-                    {
-                    });
-                    webBuilder.UseContentRoot(Directory.GetCurrentDirectory());
-                    webBuilder.UseIISIntegration();
-                });
-    }
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Your Syncfusion license key");
+
+app.UseCors(MyAllowSpecificOrigins);
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
 
+app.UseAuthorization();
 
-            
-           
+app.MapControllers();
+
+app.Run();
