@@ -1,101 +1,49 @@
-﻿
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] </title>
-
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous" />
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    </environment>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnify/2.3.3/css/magnify.min.css" rel="stylesheet" />
-
-   
-    <link href="https://cdn.syncfusion.com/ej2/18.3.35/material.css" rel="stylesheet">
-
-    <script src="https://cdn.syncfusion.com/ej2/18.3.35/dist/ej2.min.js" type="text/javascript"></script>
-
-
-
-    <style>
-        .magnify-modal {
-            box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .magnify-header .magnify-toolbar {
-            background-color: rgba(0, 0, 0, .5);
-        }
-
-        .magnify-stage {
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            border-width: 0;
-        }
-
-        .magnify-footer .magnify-toolbar {
-            background-color: rgba(0, 0, 0, .5);
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-
-        .magnify-header,
-        .magnify-footer {
-            pointer-events: none;
-        }
-
-        .magnify-button {
-            pointer-events: auto;
-        }
-    </style>
+    <title>@ViewData["Title"] - Core</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Core.styles.css" asp-append-version="true" />
 </head>
-
 <body>
-
-    <environment names="Development">
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous">
-        </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-            -->
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-
-    <div>
-        @RenderBody()
-
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Core</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
     </div>
-    <ejs-scripts></ejs-scripts>
-    <!-- Syncfusion Essential JS 2 Styles -->
 
-    @RenderSection("Scripts", required: false)
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Core - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
