@@ -2,7 +2,7 @@
 
 ## Example Repository – Hosting Open and Save Services
 
-This repository demonstrates how to host and integrate Open and Save services for the EJ2 Spreadsheet component using ASP.NET Core, ASP.NET MVC, and Web API. These examples are intended for developers building secure, scalable, and production-ready spreadsheet applications without relying on demo endpoints.
+This repository demonstrates how to host and integrate Open and Save services for the EJ2 Spreadsheet component using [ASP.NET Core](https://www.syncfusion.com/spreadsheet-editor-sdk/asp-net-core-spreadsheet-editor), [ASP.NET MVC](https://www.syncfusion.com/spreadsheet-editor-sdk/asp-net-mvc-spreadsheet-editor), and Web API. These examples are intended for developers building secure, scalable, and production-ready spreadsheet applications without relying on demo endpoints.
 
 ## Overview
 
