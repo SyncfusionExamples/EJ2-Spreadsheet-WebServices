@@ -28,10 +28,7 @@ jobs:
        if: steps.gitleaks.outcome != 'success'
        uses: actions/setup-dotnet@v3
        with:
-          dotnet-version: '3.1.x'
-     - name: Install Mono
-       if: steps.gitleaks.outcome != 'success'
-       run: sudo apt-get update && sudo apt-get install -y mono-complete    
+          dotnet-version: '3.1.x'  
      - name: Install the report tool packages
        if: steps.gitleaks.outcome != 'success'
        run: |
