@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+ 
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <Target Name="CopySkiaSharpNative" AfterTargets="Publish">
+    <ItemGroup>
+      <SkiaDll Include="$([System.Environment]::GetFolderPath(System.Environment+SpecialFolder.UserProfile))\.nuget\packages\**\libSkiaSharp.dll" />
+    </ItemGroup>
+ 
+    <Copy
+      SourceFiles="@(SkiaDll)"
+      DestinationFolder="$(PublishDir)"
+      SkipUnchangedFiles="true" />
+  </Target>
+ 
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.EJ2.Spreadsheet.AspNet.Core" Version="33.2.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.3.0" />
+  </ItemGroup>
+ 
+</Project>

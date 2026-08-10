@@ -2,13 +2,13 @@
 
 ## Example Repository – Hosting Open and Save Services
 
-This repository demonstrates how to host and integrate Open and Save services for the EJ2 Spreadsheet component using [ASP.NET Core](https://www.syncfusion.com/spreadsheet-editor-sdk/asp-net-core-spreadsheet-editor), [ASP.NET MVC](https://www.syncfusion.com/spreadsheet-editor-sdk/asp-net-mvc-spreadsheet-editor), and Web API. These examples are intended for developers building secure, scalable, and production-ready spreadsheet applications without relying on demo endpoints.
+This repository demonstrates how to host and integrate Open and Save services for the EJ2 Spreadsheet component using ASP.NET Core, ASP.NET MVC, Web API, and Python server. These examples are intended for developers building secure, scalable, and production-ready spreadsheet applications without relying on demo endpoints.
 
 ## Overview
 
 The EJ2 Spreadsheet allows users to view, edit, and manage Excel-like data directly in the browser. While demo endpoints (`openUrl` and `saveUrl`) are useful for showcasing features, they are not suitable for production due to limitations in security, scalability, and customization.
 
-This repository offers a self-hosted solution using ASP.NET Core, ASP.NET MVC, and Web API, giving developers full control over file handling, data privacy, and performance.
+This repository offers a self-hosted solution using ASP.NET Core, ASP.NET MVC, Web API, and Python server, giving developers full control over file handling, data privacy, and performance.
 
 ## How It Works
 
@@ -21,7 +21,7 @@ All operations are performed in memory during the request lifecycle, ensuring no
 
 ## Features
 
-- Host your own Open and Save services using ASP.NET Core.
+- Host your own Open and Save services using ASP.NET Core, ASP.NET MVC, Web API, or Python server.
 - Full control over data flow and file processing.
 - Enhanced security and privacy for enterprise applications.
 - Compatible with the Spreadsheet’s `openUrl` and `saveUrl` configuration.

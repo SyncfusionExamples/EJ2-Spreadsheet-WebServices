@@ -1,0 +1,11 @@
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\bin\Release\netstandard2.0\SpreadsheetLibrary.deps.json
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\bin\Release\netstandard2.0\SpreadsheetLibrary.dll
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\bin\Release\netstandard2.0\SpreadsheetLibrary.pdb
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.csproj.AssemblyReference.cache
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.AssemblyInfoInputs.cache
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.AssemblyInfo.cs
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.csproj.CoreCompileInputs.cache
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.sourcelink.json
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.dll
+D:\Works\August\Python service Github\EJ2-Spreadsheet-WebServices\Python\.NET Standard Wrapper Library\SpreadsheetLibrary\obj\Release\netstandard2.0\SpreadsheetLibrary.pdb
