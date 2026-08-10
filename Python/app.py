@@ -8,6 +8,9 @@ from io import BytesIO
 app = Flask(__name__)
 CORS(app) #enable CORS on the app
 
+app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024 # 500 MB
+app.config['MAX_FORM_MEMORY_SIZE'] = 500 * 1024 * 1024 # 500 MB
+
 # get the current working directory
 current_working_directory = os.getcwd()
 

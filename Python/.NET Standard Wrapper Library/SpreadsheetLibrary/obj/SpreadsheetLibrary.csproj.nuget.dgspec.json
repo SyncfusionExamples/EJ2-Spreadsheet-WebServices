@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Works\\April\\April 2\\New folder\\Spreadsheet service in Python\\Spreadsheet service in Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj": {}
+    "d:\\Works\\August\\Python service Github\\EJ2-Spreadsheet-WebServices\\Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj": {}
   },
   "projects": {
-    "D:\\Works\\April\\April 2\\New folder\\Spreadsheet service in Python\\Spreadsheet service in Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj": {
+    "d:\\Works\\August\\Python service Github\\EJ2-Spreadsheet-WebServices\\Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Works\\April\\April 2\\New folder\\Spreadsheet service in Python\\Spreadsheet service in Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj",
+        "projectUniqueName": "d:\\Works\\August\\Python service Github\\EJ2-Spreadsheet-WebServices\\Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj",
         "projectName": "SpreadsheetLibrary",
-        "projectPath": "D:\\Works\\April\\April 2\\New folder\\Spreadsheet service in Python\\Spreadsheet service in Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj",
+        "projectPath": "d:\\Works\\August\\Python service Github\\EJ2-Spreadsheet-WebServices\\Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\SpreadsheetLibrary.csproj",
         "packagesPath": "C:\\Users\\DeiraRajRajkumar\\.nuget\\packages\\",
-        "outputPath": "D:\\Works\\April\\April 2\\New folder\\Spreadsheet service in Python\\Spreadsheet service in Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\obj\\",
+        "outputPath": "d:\\Works\\August\\Python service Github\\EJ2-Spreadsheet-WebServices\\Python\\.NET Standard Wrapper Library\\SpreadsheetLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -27,12 +27,14 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "D:\\Works\\July\\SkiaSharp\\XlsIO custom nuget skv4.150.1": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nexus.syncfusioninternal.com/repository/ej2-nuget/": {},
           "https://nexus.syncfusioninternal.com/repository/nuget-servicepack/": {}
         },
         "frameworks": {
           "netstandard2.0": {
+            "framework": "netstandard2.0",
             "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
@@ -47,12 +49,25 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "netstandard2.0": {
+          "framework": "netstandard2.0",
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Razor": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -61,7 +76,7 @@
             },
             "Syncfusion.EJ2.Spreadsheet.AspNet.Core": {
               "target": "Package",
-              "version": "[33.1.46, )"
+              "version": "[33.2.15, )"
             }
           },
           "imports": [
@@ -75,7 +90,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
