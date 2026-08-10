@@ -38,10 +38,12 @@ This approach allows you to run a Python-based web service that leverages .NET D
 	python app.py
 	```
 3. **Client-side Configuration:**
-	Update the `openUrl` and `saveUrl` properties of your Spreadsheet component to point to the hosted URL:
-	```jsx
-	<SpreadsheetComponent openUrl="http://127.0.0.1:5000/Open" saveUrl="http://127.0.0.1:5000/Save" />
-	```
+	Update the `openUrl` and `saveUrl` properties of your Client-side Spreadsheet component to point to the hosted URL:
+
+	| Property   | Value                                 |
+	|------------|---------------------------------------|
+	| openUrl    | http://127.0.0.1:5000/Open            |
+	| saveUrl    | http://127.0.0.1:5000/Save            |
 
 ## .NET Dependencies (Optional)
 
@@ -63,4 +65,4 @@ If you need to update the package version or modify the .NET implementation, you
 	dotnet publish -c Release
 	```
 
-After publishing, reference the generated DLLs in your Python application as needed.
+After publishing, the newly generated DLLs will be referred by the Python application.
