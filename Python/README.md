@@ -4,7 +4,17 @@ This repository provides a Python-based web service that enables open (import) a
 
 ## About the Service
 
-A .NET class named `SpreadsheetEditor.cs` was created to handle open and save processes. After building and publishing this class, the resulting DLL files from the `bin` folder are referenced in the Python application (`app.py`), which acts as a wrapper web service.
+This solution integrates a .NET Standard class library with a Python web service to enable spreadsheet file operations.
+
+**.NET Project Structure:**
+- The core logic for opening and saving spreadsheet files is implemented in C# within a .NET Standard class library (e.g., `SpreadsheetEditor.cs`).
+- The project is managed using a solution file (`.sln`) and a project file (`.csproj`).
+- When you build and publish the .NET project, DLL files are generated in the `bin` directory. These DLLs contain all the compiled logic required for spreadsheet processing.
+
+**Integration with Python:**
+- The Python application (`app.py`) acts as a lightweight web API wrapper.
+- It uses the `pythonnet` package to load the published .NET DLLs and invoke their methods for file operations.
+- The Python code is minimal and primarily responsible for routing HTTP requests and calling the appropriate .NET methods.
 
 ### Workflow
 
@@ -35,7 +45,9 @@ This approach allows you to run a Python-based web service that leverages .NET D
 
 ## .NET Dependencies (Optional)
 
-If you wish to build or modify the .NET class library, follow these steps:
+> **Note:** This repository already includes the required DLL files for the .NET Spreadsheet library. You can use the provided DLLs out of the box.
+
+If you wish to use the latest version of the library, or make changes to the .NET code, you can generate new DLLs by following these steps:
 
 1. **Navigate to the .NET project folder:**
 	Change your directory to where the `SpreadsheetLibrary.sln` file is located.
@@ -44,11 +56,11 @@ If you wish to build or modify the .NET class library, follow these steps:
 	```
 2. **Build the .NET project:**
 	```bash
-	dotnet build SpreadsheetLibrary.sln -c Release
+	dotnet build -c Release
 	```
 3. **Publish the .NET project:**
 	```bash
-	dotnet publish SpreadsheetLibrary.sln -c Release
+	dotnet publish -c Release
 	```
 
 After publishing, reference the generated DLLs in your Python application as needed.
