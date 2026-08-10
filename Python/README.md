@@ -23,7 +23,7 @@ This solution integrates a .NET Standard class library with a Python web service
 - The service internally calls the .NET class methods to handle file operations.
 - The Python application runs as a web service, and its URL is used for the `openUrl` and `saveUrl` of the Spreadsheet component.
 
-This approach allows you to run a Python-based web service that leverages .NET DLLs, similar to the method used for the DOCX editor component.
+This approach allows you to run a Python-based web service that leverages .NET DLLs.
 
 ## Steps to Run the Web Service
 
@@ -45,9 +45,9 @@ This approach allows you to run a Python-based web service that leverages .NET D
 
 ## .NET Dependencies (Optional)
 
-> **Note:** This repository already includes the required DLL files for the .NET Spreadsheet library. You can use the provided DLLs out of the box.
+> **Note:** This repository already includes the required Spreadsheet library DLLs. In most cases, you can use the provided DLLs without any additional setup.
 
-If you wish to use the latest version of the library, or make changes to the .NET code, you can generate new DLLs by following these steps:
+If you need to update the package version or modify the .NET implementation, you can generate new DLLs by following the steps below.
 
 1. **Navigate to the .NET project folder:**
 	Change your directory to where the `SpreadsheetLibrary.sln` file is located.
