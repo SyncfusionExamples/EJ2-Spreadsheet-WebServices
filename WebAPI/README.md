@@ -2,7 +2,9 @@
 
 ## Overview
 
-We have implemented the Open and Save (server-side) functionality in ASP.NET Core using the Syncfusion XLSIO library. This library handles file operations on the server. When you open a file, the XLSIO library reads and converts it to a spreadsheet-compatible workbook in JSON format. Similarly, when you save the spreadsheet, we process the workbook JSON into an Excel model using the XLSIO library. 
+This project is built on ASP.NET WebAPI for demonstration purposes. 
+
+We have implemented the Open and Save (server-side) functionality in .NET Core library using the Syncfusion XLSIO library. This library handles file operations on the server. When you open a file, the XLSIO library reads and converts it to a spreadsheet-compatible workbook in JSON format. Similarly, when you save the spreadsheet, we process the workbook JSON into an Excel model using the XLSIO library. 
 
 **Security Notice:** Your data is not stored on our server during these actions, ensuring it remains safe and secure.
 
@@ -16,25 +18,16 @@ Follow these steps to launch and run the local service:
 
 ### 2. Setup Instructions
 
-1. **Download and Extract**
-   - Download and unzip the WebAPI project.
+1. **Clone the Repository**
+   - Clone or checkout the repository from this [repository](https://github.com/SyncfusionExamples/EJ2-Spreadsheet-WebServices/tree/main).
 
 2. **Open the Solution**
    - Open the `WebAPI.sln` file in Visual Studio.
 
-3. **Install Syncfusion Packages**
-   - Right-click on the **Dependencies** folder in the WebAPI project.
-   - Click **Manage NuGet Packages**.
-   - In the **Browse** tab, search for `Syncfusion.EJ2.Spreadsheet.AspNet.Core`.
-   - Install the latest package version.
-
-4. **Update Existing Packages (if needed)**
-   - If the package already exists, remove it first, then re-install it to ensure all dependent packages are downloaded.
-
-5. **Build the Solution**
+3. **Build the Solution**
    - Build the solution using **Build > Build Solution** or press `Ctrl+Shift+B`.
 
-6. **Run the Service**
+4. **Run the Service**
    - Press `F5` or click **Run** to start the WebAPI service.
    - The service will be hosted on `https://localhost:{port-number}`.
 
