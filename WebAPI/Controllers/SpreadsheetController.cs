@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Syncfusion.EJ2.Spreadsheet;
+using System.Text.Json;
+using System.IO;
 
 namespace WebAPI.Controllers
 {
@@ -35,6 +37,62 @@ namespace WebAPI.Controllers
         public IActionResult Save([FromForm] SaveSettings saveSettings)
         {
             return Workbook.Save(saveSettings);
+        }
+
+        [HttpPost]
+        [Route("OpenFromJson")]
+        public IActionResult OpenFromJson()
+        {
+            try
+            {
+                // Read workbook.json from the application root directory
+                string jsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "workbook.json");
+
+                if (!System.IO.File.Exists(jsonFilePath))
+                {
+                    return NotFound("workbook.json file not found in the application root directory.");
+                }
+
+                // Read JSON content from file
+                string jsonContent = System.IO.File.ReadAllText(jsonFilePath);
+
+                // Parse JSON to verify structure and extract Workbook element
+                var jsonDocument = JsonDocument.Parse(jsonContent);
+
+                if (!jsonDocument.RootElement.TryGetProperty("Workbook", out JsonElement workbookElement))
+                {
+                    return BadRequest("Invalid JSON format: 'Workbook' key not found.");
+                }
+
+                string workbookJson = workbookElement.GetRawText();
+
+                // Create SaveSettings with the workbook JSON data
+                SaveSettings saveSettings = new SaveSettings()
+                {
+                    SaveType = SaveType.Xlsx,
+                    FileName = "Sample",
+                    JSONData = workbookJson,
+                    PdfLayoutSettings = "{\"fitSheetOnOnePage\":false}"
+                };
+
+                // Save the workbook to a stream
+                var excelStream = Workbook.Save<Stream>(saveSettings);
+
+                // Save the file in the application directory
+                string outputFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Sample.xlsx");
+
+                using (var fileStream = new FileStream(outputFilePath, FileMode.Create, FileAccess.Write))
+                {
+                    excelStream.Position = 0;
+                    excelStream.CopyTo(fileStream);
+                }
+
+                return Ok(new { message = "Workbook saved successfully", filePath = outputFilePath });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
         }
     }
 }
