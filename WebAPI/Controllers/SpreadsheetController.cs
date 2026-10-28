@@ -59,9 +59,16 @@ namespace WebAPI.Controllers
                 // Parse JSON to verify structure and extract Workbook element
                 var jsonDocument = JsonDocument.Parse(jsonContent);
 
-                if (!jsonDocument.RootElement.TryGetProperty("Workbook", out JsonElement workbookElement))
+                // First, extract jsonObject property
+                if (!jsonDocument.RootElement.TryGetProperty("jsonObject", out JsonElement jsonObjectElement))
                 {
-                    return BadRequest("Invalid JSON format: 'Workbook' key not found.");
+                    return BadRequest("Invalid JSON format: 'jsonObject' key not found.");
+                }
+
+                // Then, extract Workbook from jsonObject
+                if (!jsonObjectElement.TryGetProperty("Workbook", out JsonElement workbookElement))
+                {
+                    return BadRequest("Invalid JSON format: 'Workbook' key not found in jsonObject.");
                 }
 
                 string workbookJson = workbookElement.GetRawText();
